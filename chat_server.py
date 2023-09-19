@@ -31,10 +31,11 @@ def receive(client):
             except:
                 # disconnect the client if he doesn't send any message before the timeout period
                 print(f"{clients_names[clients.index(client)]} is disconnected")
-                #rec_thread[clients.index(client)].close()
+                # remove disconnected clients' info and close their sessions
                 clients_names.pop(clients.index(client))
                 clients.remove(client)
                 client.close()
+                # exit from the disconnected clients' threads
                 break
   
             
@@ -47,10 +48,11 @@ def accept():
         clients.append(client)
         client.send("Salah's Server': Send Your Name".encode())
         try:
-        # append each new client name to the clients names' list
+            # append each new client name to the clients names' list
             clients_names.append(clients[-1].recv(1024).decode("utf-8"))
             print(f"{clients_names[-1]} joined the room")
             broadcast(f"{clients_names[-1]} joined the room",clients_names[-1])
+            # create thread for each client
             rec_thread.append(th.Thread(target=receive,args=(client,)))
             rec_thread[-1].start()
         except:
