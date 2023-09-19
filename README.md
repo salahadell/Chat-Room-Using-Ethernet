@@ -5,9 +5,14 @@ A simple chat room that allows multiple clients to connect to the server at the 
 # https://drive.google.com/drive/folders/1-1haKSgbzLbMOGLRQWndhzF488Hp37la
 
 ## Team Members     
+|      Name    |      Code     |
+| ------------ | ------------- |
+|  Salah El-din Adel | 198     |
+| Omar Mohamed Shawky | 395    |
+| Amr Fawzy Fathy | 439        |
 
-Salah El-din Adel      198
+      
 
-Omar Mohamed Shawky    395
+    
 
-Amr Fawzy Fathy        439
+        
